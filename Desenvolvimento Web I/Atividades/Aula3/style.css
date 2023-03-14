@@ -1,0 +1,89 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body, .container {
+    height: 100vh;
+    width: 100%;
+    color: rgb(210, 210, 210);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 10, 24);
+}
+
+header {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+main {
+    height: 100%;
+}
+
+.principal {
+    display: flex;
+}
+
+.extra {
+    display: flex;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 65vh;
+    border: 1px solid red;
+}
+
+.texto {
+    width: 50%;
+    height: 65vh;
+    border: 1px solid red;
+}
+
+.mapa {
+    border: 1px solid brown;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.mapa-texto {
+    width: 60%;
+}
+
+.mapa-imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border: 1px solid purple;
+}
+
+.setas {
+    display: flex;
+    width: 50%;
+    height: 22vh;
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.seta-esquerda {
+    width: 50%;
+    border: 1px solid green;
+}
+
+.seta-direita {
+    width: 50%;
+    border: 1px solid yellow
+}
+
+
