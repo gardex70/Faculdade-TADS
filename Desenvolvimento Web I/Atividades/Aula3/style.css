@@ -3,13 +3,10 @@
     padding: 0px;
 }
 
-body, .container {
+body {
     height: 100vh;
     width: 100%;
     color: rgb(210, 210, 210);
-}
-
-.container {
     display: flex;
     flex-direction: column;
     background-color: rgb(5, 10, 24);
@@ -18,72 +15,42 @@ body, .container {
 header {
     text-align: center;
     padding: 20px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 main {
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+main > article {
     height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 
-.principal {
-    display: flex;
+main > article > .article-section {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.extra {
-    display: flex;
+main > article > .article-image-section {
+    grid-row: 1 / span 2; /* define que o elemento ocupa duas linhas */
+    background-color: #fff; /* define uma cor de fundo para a célula */
+    display: flex; /* permite alinhar o conteúdo verticalmente */
+    justify-content: center; /* centraliza o conteúdo horizontalmente */
+    align-items: center; /* centraliza o conteúdo verticalmente */
 }
 
-.imagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 65vh;
-    border: 1px solid red;
+main > article > .article-image-section > img{
+    max-width: 100%; /* evita que a imagem ultrapasse a célula */
+    max-height: 100%; /* evita que a imagem ultrapasse a célula */
+    object-fit: cover;
 }
-
-.texto {
-    width: 50%;
-    height: 65vh;
-    border: 1px solid red;
-}
-
-.mapa {
-    border: 1px solid brown;
-    display: flex;
-    width: 50%;
-    justify-content: center;
-}
-
-.mapa-texto {
-    width: 60%;
-}
-
-.mapa-imagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    border: 1px solid purple;
-}
-
-.setas {
-    display: flex;
-    width: 50%;
-    height: 22vh;
-    border: 1px solid blue;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.seta-esquerda {
-    width: 50%;
-    border: 1px solid green;
-}
-
-.seta-direita {
-    width: 50%;
-    border: 1px solid yellow
-}
-
-
