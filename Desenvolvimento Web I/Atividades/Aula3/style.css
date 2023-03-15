@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
-body {
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
     height: 100vh;
     width: 100%;
     color: rgb(210, 210, 210);
@@ -14,43 +24,91 @@ body {
 
 header {
     text-align: center;
-    padding: 20px 0px;
+    padding: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 main {
-    width: 100%;
     flex-grow: 1;
     position: relative;
-    overflow: hidden;
 }
 
 main > article {
     height: 100%;
-    width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 2fr 1fr;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 
 main > article > .article-section {
-    height: 100%;
-    width: 100%;
     box-sizing: border-box;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-main > article > .article-image-section {
-    grid-row: 1 / span 2; /* define que o elemento ocupa duas linhas */
-    background-color: #fff; /* define uma cor de fundo para a célula */
-    display: flex; /* permite alinhar o conteúdo verticalmente */
-    justify-content: center; /* centraliza o conteúdo horizontalmente */
-    align-items: center; /* centraliza o conteúdo verticalmente */
+main > article[data-index="0"] > .article-image-section {
+    background-image: url(https://cdn-imgix-open.headout.com/blog/media/images/Paris/Paris+at+Night.jpg?auto=compress&fm=webp&w=1200&h=750&crop=faces&fit=min);
+    background-position: center;
 }
 
-main > article > .article-image-section > img{
-    max-width: 100%; /* evita que a imagem ultrapasse a célula */
-    max-height: 100%; /* evita que a imagem ultrapasse a célula */
-    object-fit: cover;
+main > article[data-index="1"] > .article-image-section {
+    background-image: url(https://www.vounajanela.com/wp-content/uploads/2017/12/arco-do-triunfo--1050x599.jpg);
+    background-position: center;
+}
+
+main > article > .article-text-section {
+    text-align: center;
+    text-justify: justify;
+    padding: 2rem 4rem;
+    font-size: 1.5rem;
+}
+
+main > article > .article-map-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+main > article > .article-map-section > p {
+    align-self: center;
+    padding-left: 4rem;
+    font-size: 2rem;
+}
+
+iframe {
+    width: 400px;
+}
+
+main > article > .article-nav-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    background-color: rgb(5, 10, 24);
+    border: none;
+    color: rgb(210, 210, 210);
+}
+
+.article-nav-section-left, .article-nav-section-right {
+    height: 100%;
+    width: 50%;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.article-nav-section-left:hover, .article-nav-section-right:hover {
+    background-color: rgb(8, 15, 36);
+}
+
+main > article[data-status="inactive"] {
+    transform: translateX(-100%);
 }
