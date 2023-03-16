@@ -20,6 +20,8 @@ body{
     display: flex;
     flex-direction: column;
     background-color: rgb(5, 10, 24);
+    background-image: url(https://cdn-imgix-open.headout.com/blog/media/images/Paris/Paris+at+Night.jpg?auto=compress&fm=webp&w=1200&h=750&crop=faces&fit=min);
+    background-position: center;
 }
 
 header {
@@ -35,9 +37,8 @@ main {
 
 main > article {
     height: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 2fr 1fr;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -50,8 +51,10 @@ main > article > .article-section {
 }
 
 main > article[data-index="0"] > .article-image-section {
+    /*
     background-image: url(https://cdn-imgix-open.headout.com/blog/media/images/Paris/Paris+at+Night.jpg?auto=compress&fm=webp&w=1200&h=750&crop=faces&fit=min);
     background-position: center;
+    */
 }
 
 main > article[data-index="1"] > .article-image-section {
@@ -60,10 +63,15 @@ main > article[data-index="1"] > .article-image-section {
 }
 
 main > article > .article-text-section {
-    text-align: center;
+    height: 70%;
+    text-align: right;
     text-justify: justify;
     padding: 2rem 4rem;
     font-size: 1.5rem;
+}
+
+main > article > .article-bottom-section {
+    display: flex;
 }
 
 main > article > .article-map-section {
@@ -78,7 +86,8 @@ main > article > .article-map-section > p {
 }
 
 iframe {
-    width: 400px;
+    height: 80%;
+    width: auto;
 }
 
 main > article > .article-nav-section {
@@ -88,7 +97,7 @@ main > article > .article-nav-section {
 }
 
 button {
-    background-color: rgb(5, 10, 24);
+    background-color: rgba(255, 255, 255, 0);
     border: none;
     color: rgb(210, 210, 210);
 }
